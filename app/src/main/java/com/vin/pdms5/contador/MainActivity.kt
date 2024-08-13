@@ -42,10 +42,15 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        amb.initialCb.setOnClickListener(OnClickListener {
-            contador = amb.initialEt.text.toString().toInt()
-            amb.contadorTv.text = contador.toString()
-        })
+        amb.initialCb.setOnClickListener {
+            if (amb.initialCb.isChecked) {
+                contador = amb.initialCb.text.toString().toInt()
+                amb.contadorTv.text = contador.toString()
+            } else {
+                contador = 0
+                amb.contadorTv.text = contador.toString()
+            }
+        }
 
 
         amb.clickBtn.setOnClickListener{
