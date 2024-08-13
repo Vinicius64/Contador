@@ -42,14 +42,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        amb.initialCb.setOnClickListener {
-            if (amb.initialCb.isChecked) {
-                contador = amb.initialCb.text.toString().toInt()
-                amb.contadorTv.text = contador.toString()
-            } else {
-                contador = 0
-                amb.contadorTv.text = contador.toString()
-            }
+        amb.zeroRg.setOnClickListener{
+            contador = amb.zeroRg.text.toString().toInt()
+            amb.contadorTv.text = contador.toString()
+        }
+        amb.tenRg.setOnClickListener{
+            contador = amb.tenRg.text.toString().toInt()
+            amb.contadorTv.text = contador.toString()
         }
 
 
