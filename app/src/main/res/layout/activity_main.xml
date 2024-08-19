@@ -7,27 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RadioGroup
-    android:id="@+id/initialRg"
+    <Spinner
+    android:id="@+id/initialSp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+        android:entries="@array/valores_iniciais"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:orientation="horizontal">
-
-    <RadioButton
-        android:id="@+id/zeroRg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"/>
-
-    <RadioButton
-        android:id="@+id/tenRg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10"/>
-</RadioGroup>
+    app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText

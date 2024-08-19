@@ -1,21 +1,12 @@
 package com.vin.pdms5.contador
 
-import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ReportFragment.Companion.reportFragment
+import android.widget.AdapterView.OnItemSelectedListener
 import com.vin.pdms5.contador.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -42,15 +33,25 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        amb.zeroRg.setOnClickListener{
-            contador = amb.zeroRg.text.toString().toInt()
-            amb.contadorTv.text = contador.toString()
+        amb.initialSp.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                contador = when(position){
+                    0 -> 0
+                    1 -> 5
+                    2 -> 10
+                    else -> 0
+                }
+                amb.contadorTv.text = contador.toString()
+            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
         }
-        amb.tenRg.setOnClickListener{
-            contador = amb.tenRg.text.toString().toInt()
-            amb.contadorTv.text = contador.toString()
-        }
-
 
         amb.clickBtn.setOnClickListener{
             amb.contadorTv.text = (++contador).toString()
