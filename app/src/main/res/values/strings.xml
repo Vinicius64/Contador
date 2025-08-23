@@ -4,4 +4,6 @@
     <string name="clique">Clique</string>
     <string name="initial_number">0</string>
     <string name="digite_o_valor_inicial">Digite o valor inicial</string>
+    <string name="dez">10</string>
+    <string name="zero">0</string>
 </resources>

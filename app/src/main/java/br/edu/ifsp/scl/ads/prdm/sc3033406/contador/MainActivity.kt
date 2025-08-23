@@ -13,14 +13,26 @@ class MainActivity : AppCompatActivity() {
     private var contador: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(amb.root)
 
-        amb.cliqueBt.setOnClickListener {
-            amb.contadorTv.text = (++contador).toString()
-        }
+        with(amb){
+            setContentView(root)
 
-        amb.inicialEt.addTextChangedListener { p0 ->
-            contador = p0.toString().toInt()
+            cliqueBt.setOnClickListener {
+                amb.contadorTv.text = (++contador).toString()
+            }
+
+//            inicialEt.addTextChangedListener { p0 ->
+//                contador = p0.toString().toInt()
+//            }
+
+            inicialCb.setOnClickListener {
+                contador = if(inicialCb.isChecked){
+                    getString(R.string.dez).toInt()
+                }else{
+                    getString(R.string.zero).toInt()
+                }
+                contadorTv.text = contador.toString()
+            }
         }
     }
 }

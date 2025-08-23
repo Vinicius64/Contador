@@ -8,12 +8,11 @@
     tools:context=".MainActivity"
     android:fitsSystemWindows="true">
 
-    <EditText
-        android:id="@+id/inicial_et"
+    <CheckBox
+        android:id="@+id/inicial_cb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/digite_o_valor_inicial"
-        android:inputType="number"
+        android:text="@string/dez"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -27,7 +26,7 @@
         app:layout_constraintBottom_toTopOf="@id/clique_bt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inicial_et" />
+        app:layout_constraintTop_toBottomOf="@id/inicial_cb" />
 
     <Button
         android:id="@+id/clique_bt"
