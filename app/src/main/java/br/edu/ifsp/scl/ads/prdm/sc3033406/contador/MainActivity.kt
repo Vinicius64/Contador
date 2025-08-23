@@ -1,6 +1,7 @@
 package br.edu.ifsp.scl.ads.prdm.sc3033406.contador
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import br.edu.ifsp.scl.ads.prdm.sc3033406.contador.databinding.ActivityMainBinding
@@ -27,8 +28,10 @@ class MainActivity : AppCompatActivity() {
 
             inicialCb.setOnClickListener {
                 contador = if(inicialCb.isChecked){
+                    Toast.makeText(this@MainActivity, "Você clicou no CheckBox para alterar para " + getString(R.string.dez), Toast.LENGTH_SHORT).show()
                     getString(R.string.dez).toInt()
                 }else{
+                    Toast.makeText(this@MainActivity, "Você clicou no CheckBox para alterar para " + getString(R.string.zero), Toast.LENGTH_SHORT).show()
                     getString(R.string.zero).toInt()
                 }
                 contadorTv.text = contador.toString()
